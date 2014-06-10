@@ -67,7 +67,7 @@ public final class Snapshot {
 	 * @return	{@link JSONObject}
      */
     public JSONObject update(String company, String username, String ts, HashMap<String, String> params) throws JSONException {   
-        return oClient.get("/team/v1/snapshots/" + company + "/" + username + "/" + ts, params);
+        return oClient.put("/team/v1/snapshots/" + company + "/" + username + "/" + ts, params);
     }
     
     /**
@@ -80,7 +80,7 @@ public final class Snapshot {
 	 * @return	{@link JSONObject}
      */
     public JSONObject delete(String company, String username, String ts) throws JSONException {
-        return oClient.get("/team/v1/snapshots/" + company + "/" + username + "/" + ts);
+        return oClient.delete("/team/v1/snapshots/" + company + "/" + username + "/" + ts);
     }
 
 }
