@@ -57,7 +57,7 @@ public final class Team {
         String url = "";
         if (isFull) {
             url = "/full_list";
-        } else if (code == null) {
+        } else if (code != null) {
             url = "/" + code;
         }
 
