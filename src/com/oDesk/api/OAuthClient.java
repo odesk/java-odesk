@@ -257,7 +257,7 @@ public class OAuthClient {
 				for (Map.Entry<String, String> entry : params.entrySet()) {
 	                String key = entry.getKey();
 	                String value = entry.getValue();
-	                uriBuilder.addParameter(key, OAuth.percentEncode(value));
+	                uriBuilder.addParameter(key, OAuth.percentEncode(value).replace("%3B", ";"));
 	            }
 				uri = uriBuilder.build();
 				
@@ -309,7 +309,7 @@ public class OAuthClient {
 		}
 		
 		// add parameters to request
-		List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
+		List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(params.size());
         
         for (Map.Entry<String, String> entry : params.entrySet()) {
             String key = entry.getKey();
