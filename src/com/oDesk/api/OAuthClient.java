@@ -250,6 +250,7 @@ public class OAuthClient {
 		
 		if (params != null) {
 			URI uri;
+			String query = "";
 			try {
 				URIBuilder uriBuilder = new URIBuilder(request.getURI());
 
@@ -257,8 +258,11 @@ public class OAuthClient {
 				for (Map.Entry<String, String> entry : params.entrySet()) {
 	                String key = entry.getKey();
 	                String value = entry.getValue();
-	                uriBuilder.addParameter(key, OAuth.percentEncode(value).replace("%3B", ";"));
+	                // to prevent double encoding, we need to create query string ourself
+	                // uriBuilder.addParameter(key, URLEncoder.encode(value).replace("%3B", ";"));
+	                query = query + key + "=" + value + "&";
 	            }
+				uriBuilder.setCustomQuery(query);
 				uri = uriBuilder.build();
 				
 				((HttpRequestBase) request).setURI(uri);
