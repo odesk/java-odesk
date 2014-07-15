@@ -2,6 +2,7 @@ JAVA bindings for oDesk API
 ============
 
 [![License](http://img.shields.io/packagist/l/odesk/php-odesk.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
+[![Build Status](https://travis-ci.org/odesk/java-odesk.svg?branch=master)](https://travis-ci.org/odesk/java-odesk)
 [![Stories in Ready](http://badge.waffle.io/odesk/java-odesk.png)](http://waffle.io/odesk/java-odesk)
 
 # Introduction
