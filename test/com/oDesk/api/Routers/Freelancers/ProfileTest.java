@@ -1,4 +1,4 @@
-package com.oDesk.api.Routers;
+package com.oDesk.api.Routers.Freelancers;
 
 import static org.junit.Assert.*;
 
@@ -9,16 +9,16 @@ import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 
 import com.oDesk.api.Routers.Helper;
-import com.oDesk.api.Routers.Auth;
+import com.oDesk.api.Routers.Freelancers.Profile;
 
 @RunWith(PowerMockRunner.class)
 @PrepareForTest({
-    Auth.class
+    Profile.class
 })
-public class AuthTest extends Helper {
-	@Test public void getUserInfo() throws Exception {
-		Auth auth = new Auth(client);
-    	JSONObject json = auth.getUserInfo();
+public class ProfileTest extends Helper {
+	@Test public void getSpecific() throws Exception {
+		Profile profile = new Profile(client);
+    	JSONObject json = profile.getSpecific("key");
         
         assertTrue(json instanceof JSONObject);
 	}
