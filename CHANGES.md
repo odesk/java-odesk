@@ -1,5 +1,8 @@
 # Release History
 
+## 0.1.4
+* Code cleanup - drop unsupported API
+
 ## 0.1.3
 * Fix issue with page/paging parameter
 * Fix issue with limited number of parameters
