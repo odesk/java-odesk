@@ -43,18 +43,6 @@ public final class Payments {
 		oClient.setEntryPoint(ENTRY_POINT);
 	}
 	
-	/** 
-     * Get Adjustments
-     *
-     * @param   teamReference Team reference
-     * @param   params Parameters
-     * @throws	JSONException If error occurred
-	 * @return	{@link JSONObject}
-     */
-    public JSONObject getAdjustments(String teamReference, HashMap<String, String> params) throws JSONException {
-        return oClient.get("/hr/v2/teams/" + teamReference + "/adjustments", params);
-    }   
-
     /** 
      * Submit a Custom Payment
      *

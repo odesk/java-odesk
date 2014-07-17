@@ -18,13 +18,6 @@ import com.oDesk.api.Routers.Payments;
     Payments.class
 })
 public class PaymentsTest extends Helper {
-	@Test public void getAdjustments() throws Exception {
-		Payments payments = new Payments(client);
-    	JSONObject json = payments.getAdjustments("1234", new HashMap<String, String>());
-        
-        assertTrue(json instanceof JSONObject);
-	}
-	
 	@Test public void submitBonus() throws Exception {
 		Payments payments = new Payments(client);
     	JSONObject json = payments.submitBonus("1234", new HashMap<String, String>());
