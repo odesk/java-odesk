@@ -2,6 +2,7 @@
 
 ## 0.1.4
 * Code cleanup - drop unsupported API
+* Fix Config to support custom properties
 
 ## 0.1.3
 * Fix issue with page/paging parameter

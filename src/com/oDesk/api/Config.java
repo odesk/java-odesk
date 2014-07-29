@@ -41,6 +41,7 @@ public class Config {
 		}
 		else {
 			this.properties = properties;
+			return;
 		}
 		
 		InputStream input = null;
