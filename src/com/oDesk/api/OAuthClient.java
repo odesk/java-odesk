@@ -204,6 +204,17 @@ public class OAuthClient {
 	 * Send signed OAuth PUT request
 	 * 
 	 * @param	url Relative URL
+	 * @throws	JSONException If JSON object is invalid or request was abnormal
+	 * @return	{@link JSONObject} JSON Object that contains data from response
+	 * */
+	public JSONObject put(String url) throws JSONException {
+		return sendPostRequest(url, METHOD_PUT, new HashMap<String, String>());
+	}
+	
+	/**
+	 * Send signed OAuth PUT request
+	 * 
+	 * @param	url Relative URL
 	 * @param	params Hash of parameters
 	 * @throws	JSONException If JSON object is invalid or request was abnormal
 	 * @return	{@link JSONObject} JSON Object that contains data from response

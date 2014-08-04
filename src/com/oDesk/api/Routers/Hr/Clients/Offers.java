@@ -44,7 +44,7 @@ public final class Offers {
 	}
 	
 	/**
-     * Get list of applications
+     * Get list of offers
      *
      * @param   params Parameters
      * @throws	JSONException If error occurred
@@ -54,15 +54,16 @@ public final class Offers {
         return oClient.get("/offers/v1/clients/offers", params);
     }
 
-    /**
-     * Get specific application
+    /** 
+     * Get specific offer
      *
      * @param   reference Offer reference
-     * @throws	JSONException If error occurred
-	 * @return	{@link JSONObject}
+     * @param   params Parameters
+     * @throws  JSONException If error occurred
+     * @return  {@link JSONObject}
      */
-    public JSONObject getSpecific(String reference) throws JSONException {
-        return oClient.get("/offers/v1/clients/offers/" + reference);
+    public JSONObject getSpecific(String reference, HashMap<String, String> params) throws JSONException {
+        return oClient.get("/offers/v1/clients/offers/" + reference, params);
     }
     
     /**

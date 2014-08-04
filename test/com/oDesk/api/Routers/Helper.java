@@ -26,6 +26,7 @@ public class Helper {
         when(client.get(Matchers.anyString())).thenReturn(new JSONObject("{'key': 'value'}"));
         when(client.get(Matchers.anyString(), (HashMap<String, String>) Matchers.anyObject())).thenReturn(new JSONObject("{'key': 'value'}"));
         when(client.post(Matchers.anyString(), (HashMap<String, String>) Matchers.anyObject())).thenReturn(new JSONObject("{'key': 'value'}"));
+        when(client.put(Matchers.anyString())).thenReturn(new JSONObject("{'key': 'value'}"));
         when(client.put(Matchers.anyString(), (HashMap<String, String>) Matchers.anyObject())).thenReturn(new JSONObject("{'key': 'value'}"));
         when(client.delete(Matchers.anyString())).thenReturn(new JSONObject("{'key': 'value'}"));
         when(client.delete(Matchers.anyString(), (HashMap<String, String>) Matchers.anyObject())).thenReturn(new JSONObject("{'key': 'value'}"));

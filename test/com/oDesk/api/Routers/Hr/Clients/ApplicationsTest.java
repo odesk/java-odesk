@@ -27,7 +27,7 @@ public class ApplicationsTest extends Helper {
 	
 	@Test public void getSpecific() throws Exception {
 		Applications applications = new Applications(client);
-    	JSONObject json = applications.getSpecific("1234");
+    	JSONObject json = applications.getSpecific("1234", new HashMap<String, String>());
         
         assertTrue(json instanceof JSONObject);
 	}

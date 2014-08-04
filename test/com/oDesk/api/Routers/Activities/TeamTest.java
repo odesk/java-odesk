@@ -52,6 +52,20 @@ public class TeamTest extends Helper {
         assertTrue(json instanceof JSONObject);
 	}
 	
+	@Test public void archiveActivity() throws Exception {
+		Team activities = new Team(client);
+    	JSONObject json = activities.archiveActivity("company", "team", "code");
+        
+        assertTrue(json instanceof JSONObject);
+	}
+	
+	@Test public void unarchiveActivity() throws Exception {
+		Team activities = new Team(client);
+    	JSONObject json = activities.unarchiveActivity("company", "team", "code");
+        
+        assertTrue(json instanceof JSONObject);
+	}
+	
 	@Test public void deleteActivities() throws Exception {
 		Team activities = new Team(client);
     	JSONObject json = activities.deleteActivities("company", "team", "code");

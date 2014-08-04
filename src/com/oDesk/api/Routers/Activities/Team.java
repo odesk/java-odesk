@@ -65,7 +65,7 @@ public final class Team {
     }
 
     /**
-     * List all oTask/Activity records within a Company
+     * List all oTask/Activity records within a team
      *
      * @param   company Company ID
      * @throws	JSONException If error occurred
@@ -76,7 +76,7 @@ public final class Team {
     }
     
     /**
-     * List all oTask/Activity records within a Company with additional info
+     * List all oTask/Activity records within a team with additional info
      *
      * @param   company Company ID
      * @param	team Team ID
@@ -88,7 +88,7 @@ public final class Team {
     }
 
     /**
-     * List all oTask/Activity records within a Company by specified code(s)
+     * List all oTask/Activity records within a team by specified code(s)
      *
      * @param   company Company ID
      * @param	team Team ID
@@ -101,7 +101,7 @@ public final class Team {
     }
     
     /**
-     * Create an oTask/Activity record within a company
+     * Create an oTask/Activity record within a team
      *
      * @param   company Company ID
      * @param	team Team ID
@@ -114,7 +114,7 @@ public final class Team {
     }
 
     /**
-     * Update specific oTask/Activity record within a company
+     * Update specific oTask/Activity record within a team
      *
      * @param   company Company ID
      * @param	team Team ID
@@ -128,7 +128,33 @@ public final class Team {
     }
     
     /**
-     * Delete specific oTask/Activity record within a company
+     * Archive specific oTask/Activity record within a team
+     *
+     * @param   company Company ID
+     * @param	team Team ID
+     * @param   code Specific code
+     * @throws	JSONException If error occurred
+	 * @return	{@link JSONObject}
+     */
+    public JSONObject archiveActivity(String company, String team, String code) throws JSONException {
+        return oClient.put("/otask/v1/tasks/companies/" + company + "/teams/" + team + "/archive/" + code);
+    }
+    
+    /**
+     * Unarchive specific oTask/Activity record within a team
+     *
+     * @param   company Company ID
+     * @param	team Team ID
+     * @param   code Specific code
+     * @throws	JSONException If error occurred
+	 * @return	{@link JSONObject}
+     */
+    public JSONObject unarchiveActivity(String company, String team, String code) throws JSONException {
+        return oClient.put("/otask/v1/tasks/companies/" + company + "/teams/" + team + "/unarchive/" + code);
+    }
+    
+    /**
+     * Delete specific oTask/Activity record within a team
      *
      * @param   company Company ID
      * @param	team Team ID
@@ -141,7 +167,7 @@ public final class Team {
     }
     
     /**
-     * Delete all oTask/Activity records within a company
+     * Delete all oTask/Activity records within a team
      *
      * @param   company Company ID
      * @param	team Team ID
