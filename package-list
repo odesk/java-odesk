@@ -1,0 +1,12 @@
+com.oDesk
+com.oDesk.api
+com.oDesk.api.Routers
+com.oDesk.api.Routers.Activities
+com.oDesk.api.Routers.Freelancers
+com.oDesk.api.Routers.Hr
+com.oDesk.api.Routers.Hr.Clients
+com.oDesk.api.Routers.Hr.Freelancers
+com.oDesk.api.Routers.Jobs
+com.oDesk.api.Routers.Organization
+com.oDesk.api.Routers.Reports
+com.oDesk.api.Routers.Reports.Finance
