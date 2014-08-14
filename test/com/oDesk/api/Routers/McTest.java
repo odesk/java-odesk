@@ -39,6 +39,24 @@ public class McTest extends Helper {
         assertTrue(json instanceof JSONObject);
 	}
 	
+	@Test public void getThreadByContext() throws Exception {
+		Mc mc = new Mc(client);
+    	JSONObject json1 = mc.getThreadByContext("username", "~key", "1234");
+    	JSONObject json2 = mc.getThreadByContext("username", "~key", "1234", "Interviews");
+        
+        assertTrue(json1 instanceof JSONObject);
+        assertTrue(json2 instanceof JSONObject);
+	}
+	
+	@Test public void getThreadByContextLastPosts() throws Exception {
+		Mc mc = new Mc(client);
+    	JSONObject json1 = mc.getThreadByContextLastPosts("username", "~key", "1234");
+    	JSONObject json2 = mc.getThreadByContextLastPosts("username", "~key", "1234", "Interviews");
+        
+        assertTrue(json1 instanceof JSONObject);
+        assertTrue(json2 instanceof JSONObject);
+	}
+	
 	@Test public void startNewThread() throws Exception {
 		Mc mc = new Mc(client);
     	JSONObject json = mc.startNewThread("username", new HashMap<String, String>());

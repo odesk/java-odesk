@@ -25,13 +25,6 @@ public class TeamTest extends Helper {
         assertTrue(json instanceof JSONObject);
 	}
 	
-	@Test public void getFullList() throws Exception {
-		Team activities = new Team(client);
-    	JSONObject json = activities.getFullList("company", "team");
-        
-        assertTrue(json instanceof JSONObject);
-	}
-	
 	@Test public void getSpecificList() throws Exception {
 		Team activities = new Team(client);
     	JSONObject json = activities.getSpecificList("company", "team", "code");
@@ -62,20 +55,6 @@ public class TeamTest extends Helper {
 	@Test public void unarchiveActivity() throws Exception {
 		Team activities = new Team(client);
     	JSONObject json = activities.unarchiveActivity("company", "team", "code");
-        
-        assertTrue(json instanceof JSONObject);
-	}
-	
-	@Test public void deleteActivities() throws Exception {
-		Team activities = new Team(client);
-    	JSONObject json = activities.deleteActivities("company", "team", "code");
-        
-        assertTrue(json instanceof JSONObject);
-	}
-	
-	@Test public void deleteAllActivities() throws Exception {
-		Team activities = new Team(client);
-    	JSONObject json = activities.deleteAllActivities("company", "team");
         
         assertTrue(json instanceof JSONObject);
 	}

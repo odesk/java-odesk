@@ -49,15 +49,12 @@ public final class Team {
      * @param   company Company ID
      * @param	team Team ID
      * @param   code (Optional) Code(s)
-     * @param   isFull (Optional) Full list option
      * @throws	JSONException If error occurred
 	 * @return	{@link JSONObject}
      */
-    private JSONObject _getByType(String company, String team, String code, Boolean isFull) throws JSONException {
+    private JSONObject _getByType(String company, String team, String code) throws JSONException {
         String url = "";
-        if (isFull) {
-            url = "/full_list";
-        } else if (code != null) {
+        if (code != null) {
             url = "/" + code;
         }
 
@@ -72,21 +69,9 @@ public final class Team {
 	 * @return	{@link JSONObject}
      */
     public JSONObject getList(String company, String team) throws JSONException {
-        return _getByType(company, team, null, false);
+        return _getByType(company, team, null);
     }
     
-    /**
-     * List all oTask/Activity records within a team with additional info
-     *
-     * @param   company Company ID
-     * @param	team Team ID
-     * @throws	JSONException If error occurred
-	 * @return	{@link JSONObject}
-     */
-    public JSONObject getFullList(String company, String team) throws JSONException {
-        return _getByType(company, team, null, true);
-    }
-
     /**
      * List all oTask/Activity records within a team by specified code(s)
      *
@@ -97,7 +82,7 @@ public final class Team {
 	 * @return	{@link JSONObject}
      */
     public JSONObject getSpecificList(String company, String team, String code) throws JSONException {
-        return _getByType(company, team, code, false);
+        return _getByType(company, team, code);
     }
     
     /**
@@ -151,31 +136,6 @@ public final class Team {
      */
     public JSONObject unarchiveActivity(String company, String team, String code) throws JSONException {
         return oClient.put("/otask/v1/tasks/companies/" + company + "/teams/" + team + "/unarchive/" + code);
-    }
-    
-    /**
-     * Delete specific oTask/Activity record within a team
-     *
-     * @param   company Company ID
-     * @param	team Team ID
-     * @param   code Specific code(s)
-     * @throws	JSONException If error occurred
-	 * @return	{@link JSONObject}
-     */
-    public JSONObject deleteActivities(String company, String team, String code) throws JSONException {
-        return oClient.delete("/otask/v1/tasks/companies/" + company + "/teams/" + team + "/tasks/" + code);
-    }
-    
-    /**
-     * Delete all oTask/Activity records within a team
-     *
-     * @param   company Company ID
-     * @param	team Team ID
-     * @throws	JSONException If error occurred
-	 * @return	{@link JSONObject}
-     */
-    public JSONObject deleteAllActivities(String company, String team) throws JSONException {
-        return oClient.delete("/otask/v1/tasks/companies/" + company + "/teams/" + team + "/tasks/all_tasks");
     }
 
 }
