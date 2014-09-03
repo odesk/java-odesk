@@ -48,4 +48,10 @@ The usage of this API is ruled by the Terms of Use at:
     http://developers.odesk.com/API-Terms-of-Use
 
 ## Example
-See `example` directory
+See the `example` directory. To quickly run the example from the command line:
+
+    cd example
+    make
+    make run
+
+Make sure you've added consumer key and secret to the `example/odesk.properties`.
