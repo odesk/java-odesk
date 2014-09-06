@@ -4,7 +4,7 @@
  * Licensed under the oDesk's API Terms of Use;
  * you may not use this file except in compliance with the Terms.
  * You may obtain a copy of the Terms at
- * 
+ *
  *    http://developers.odesk.com/API-Terms-of-Use
  *
  * Unless required by applicable law or agreed to in writing, software
@@ -31,25 +31,35 @@ import org.json.JSONObject;
 	reviewers = {"Yiota Tsakiri"}
 )
 public final class Profile {
-	
+
 	final static String ENTRY_POINT = "api";
-	
+
 	private OAuthClient oClient = null;
 
 	public Profile(OAuthClient client) {
 		oClient = client;
 		oClient.setEntryPoint(ENTRY_POINT);
 	}
-	
-	/** 
+
+	/**
      * Get specific Freelancer's Profile
      *
      * @param   key Profile key
      * @throws	JSONException If error occurred
 	 * @return	{@link JSONObject}
      */
-    public JSONObject getSpecific(String key) throws JSONException {   
+    public JSONObject getSpecific(String key) throws JSONException {
         return oClient.get("/profiles/v1/providers/" + key);
     }
 
+	/**
+     * Get brief info for the specific Freelancer's Profile
+     *
+     * @param   key Profile key
+     * @throws	JSONException If error occurred
+	 * @return	{@link JSONObject}
+     */
+    public JSONObject getSpecificBrief(String key) throws JSONException {
+        return oClient.get("/profiles/v1/providers/" + key + "/brief");
+    }
 }
