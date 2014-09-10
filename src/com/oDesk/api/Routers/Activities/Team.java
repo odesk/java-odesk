@@ -138,4 +138,16 @@ public final class Team {
         return oClient.put("/otask/v1/tasks/companies/" + company + "/teams/" + team + "/unarchive/" + code);
     }
 
+    /**
+     * Update a group of oTask/Activity records
+     *
+     * @param   company Company ID
+     * @param   params Parameters
+     * @throws	JSONException If error occurred
+	 * @return	{@link JSONObject}
+     */
+    public JSONObject updateBatch(String company, HashMap<String, String> params) throws JSONException {
+        return oClient.put("/otask/v1/tasks/companies/" + company + "/tasks/batch", params);
+    }
+
 }

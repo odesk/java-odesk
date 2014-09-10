@@ -62,7 +62,7 @@ public final class Mc {
     }
     
     /**
-     * Get a specific thread by context
+     * Get a specific thread by "Interview" context
      *
      * @param   username Username
      * @param	jobKey Job key
