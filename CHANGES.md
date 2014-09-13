@@ -1,5 +1,9 @@
 # Release History
 
+## 0.1.7
+* Added new API - Get brief profile summary
+* Added new API - Update bulk of activities
+
 ## 0.1.6
 * Deprecated Get Full List in oTasks API 
 * Deprecated Delete Codes in oTasks API 
