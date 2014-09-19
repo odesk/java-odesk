@@ -28,7 +28,7 @@ import org.json.JSONObject;
 	author = "Maksym Novozhylov <mnovozhilov@odesk.com>",
 	date = "6/4/2014",
 	currentRevision = 1,
-	lastModified = "6/4/2014",
+	lastModified = "19/9/2014",
 	lastModifiedBy = "Maksym Novozhylov",
 	reviewers = {"Yiota Tsakiri"}
 )
@@ -42,6 +42,30 @@ public final class Contracts {
 		oClient = client;
 		oClient.setEntryPoint(ENTRY_POINT);
 	}
+	
+	/** 
+     * Suspend Contract
+     *
+     * @param   reference Contract reference
+     * @param   params Parameters
+     * @throws	JSONException If error occurred
+	 * @return	{@link JSONObject}
+     */
+    public JSONObject suspendContract(String reference, HashMap<String, String> params) throws JSONException {   
+        return oClient.put("/hr/v2/contracts/" + reference + "/suspend", params);
+    }
+    
+    /** 
+     * Restart Contract
+     *
+     * @param   reference Contract reference
+     * @param   params Parameters
+     * @throws	JSONException If error occurred
+	 * @return	{@link JSONObject}
+     */
+    public JSONObject restartContract(String reference, HashMap<String, String> params) throws JSONException {   
+        return oClient.put("/hr/v2/contracts/" + reference + "/restart", params);
+    }
 	
 	/** 
      * End Contract
