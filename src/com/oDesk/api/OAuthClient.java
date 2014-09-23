@@ -101,21 +101,22 @@ public class OAuthClient {
 	}
 	
 	/**
+	 * Get authorization URL, and use provided callback
+	 * 
+     * @param   oauthCallback URL, i.e. oauth_callback used in mobile applications
+	 * @return	URL for authorizing application
+	 * */
+	public String getAuthorizationUrl(String oauthCallback) {
+        return _getAuthorizationUrl(oauthCallback);
+    }
+
+	/**
 	 * Get authorization URL
 	 * 
 	 * @return	URL for authorizing application
 	 * */
 	public String getAuthorizationUrl() {
-		String url = null;
-        
-		try {
-            url = mOAuthProvider.retrieveRequestToken(mOAuthConsumer, "");
-        }
-        catch (OAuthException e) {
-            e.printStackTrace();
-        }
-		
-		return url;
+        return _getAuthorizationUrl("");
 	}
 	
 	/**
@@ -244,6 +245,25 @@ public class OAuthClient {
 	 * */
 	public JSONObject delete(String url, HashMap<String, String> params) throws JSONException {
 		return sendPostRequest(url, METHOD_DELETE, params);
+	}
+	
+	/**
+	 * Get authorization URL, use provided callback URL
+	 * 
+     * @param   oauthCallback URL, i.e. oauth_callback
+	 * @return	URL for authorizing application
+	 * */
+	private String _getAuthorizationUrl(String oauthCallback) {
+		String url = null;
+        
+		try {
+            url = mOAuthProvider.retrieveRequestToken(mOAuthConsumer, oauthCallback);
+        }
+        catch (OAuthException e) {
+            e.printStackTrace();
+        }
+		
+		return url;
 	}
 	
 	/**
