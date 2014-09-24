@@ -1,5 +1,11 @@
 # Release History
 
+## 0.1.8
+* Added new API - Suspend Contract
+* Added new API - Resume Contract
+* Un/archive Activities start supporting a list of codes
+* Added new method client.getAuthorizationUrl(oauthCallback), supported in mobile applications
+
 ## 0.1.7
 * Added new API - Get brief profile summary
 * Added new API - Update bulk of activities

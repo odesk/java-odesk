@@ -159,6 +159,9 @@ public class MyActivity extends Activity {
         @Override
         protected String doInBackground(Void... params) {
             String authzUrl = client.getAuthorizationUrl();
+            // if your api key type is 'mobile', possibly you want to use
+            // oauth_callback in your application, then use
+            //String authzUrl = client.getAuthorizationUrl("x-app://your_callback");
 
             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(authzUrl)));
 

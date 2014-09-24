@@ -117,7 +117,7 @@ public final class Team {
      *
      * @param   company Company ID
      * @param	team Team ID
-     * @param   code Specific code
+     * @param   code Specific code(s)
      * @throws	JSONException If error occurred
 	 * @return	{@link JSONObject}
      */
@@ -130,7 +130,7 @@ public final class Team {
      *
      * @param   company Company ID
      * @param	team Team ID
-     * @param   code Specific code
+     * @param   code Specific code(s)
      * @throws	JSONException If error occurred
 	 * @return	{@link JSONObject}
      */
