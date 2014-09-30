@@ -25,22 +25,17 @@ import com.oDesk.api.oDeskRestClient;
 import java.io.UnsupportedEncodingException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-import org.apache.http.NameValuePair;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.client.utils.URIBuilder;
-import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.entity.StringEntity;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import oauth.signpost.OAuth;
 import oauth.signpost.OAuthConsumer;
 import oauth.signpost.OAuthProvider;
 import oauth.signpost.commonshttp.CommonsHttpOAuthConsumer;
@@ -51,7 +46,7 @@ import oauth.signpost.exception.OAuthException;
 	author = "Maksym Novozhylov <mnovozhilov@odesk.com>",
 	date = "5/31/2014",
 	currentRevision = 1,
-	lastModified = "6/3/2014",
+	lastModified = "9/30/2014",
 	lastModifiedBy = "Maksym Novozhylov",
 	reviewers = {"Yiota Tsakiri"}
 )
@@ -343,16 +338,16 @@ public class OAuthClient {
             throw new RuntimeException("Wrong http method requested");
 		}
 		
-		// add parameters to request
-		List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(params.size());
-        
+		// doing post request using json to avoid issue with urlencoded symbols
+		JSONObject json = new JSONObject();
+		
         for (Map.Entry<String, String> entry : params.entrySet()) {
-            String key = entry.getKey();
-            String value = entry.getValue();
-            nameValuePairs.add(new BasicNameValuePair(key, OAuth.percentEncode(value)));
+            json.put(entry.getKey(), entry.getValue());
         }
-        try {
-			request.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+		
+		request.setHeader("Content-Type", "application/json");
+		try {
+			request.setEntity(new StringEntity(json.toString()));
 		} catch (UnsupportedEncodingException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();

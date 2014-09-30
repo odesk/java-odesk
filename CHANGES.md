@@ -1,5 +1,8 @@
 # Release History
 
+## 0.1.9
+* Fixed issue #5 (encoding of post parameters)
+
 ## 0.1.8
 * Added new API - Suspend Contract
 * Added new API - Resume Contract
