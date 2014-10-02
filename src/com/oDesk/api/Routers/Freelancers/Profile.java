@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the Terms.
  * You may obtain a copy of the Terms at
  *
- *    http://developers.odesk.com/API-Terms-of-Use
+ *    https://developers.odesk.com/api-tos.html
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
