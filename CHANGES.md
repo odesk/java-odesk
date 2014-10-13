@@ -1,5 +1,8 @@
 # Release History
 
+## 0.1.10
+* Added new call for Referenced User API
+
 ## 0.1.9
 * Fixed issue #5 (encoding of post parameters)
 

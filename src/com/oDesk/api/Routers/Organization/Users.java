@@ -26,7 +26,7 @@ import org.json.JSONObject;
 	author = "Maksym Novozhylov <mnovozhilov@odesk.com>",
 	date = "6/4/2014",
 	currentRevision = 1,
-	lastModified = "6/4/2014",
+	lastModified = "10/13/2014",
 	lastModifiedBy = "Maksym Novozhylov",
 	reviewers = {"Yiota Tsakiri"}
 )
@@ -49,6 +49,17 @@ public final class Users {
      */
     public JSONObject getMyInfo() throws JSONException {   
         return oClient.get("/hr/v2/users/me");
+    }
+	
+	/** 
+     * Get Specific User Info
+     *
+     * @param   userReference User reference
+     * @throws	JSONException If error occurred
+	 * @return	{@link JSONObject}
+     */
+    public JSONObject getSpecific(String userReference) throws JSONException {   
+        return oClient.get("/hr/v2/users/me" + userReference);
     }
 
 }

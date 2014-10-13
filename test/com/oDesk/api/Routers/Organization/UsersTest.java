@@ -22,4 +22,11 @@ public class UsersTest extends Helper {
         
         assertTrue(json instanceof JSONObject);
 	}
+
+	@Test public void getSpecific() throws Exception {
+		Users users = new Users(client);
+    	JSONObject json = users.getSpecific("12");
+        
+        assertTrue(json instanceof JSONObject);
+	}
 }
