@@ -18,6 +18,20 @@ import com.oDesk.api.Routers.Hr.Milestones;
 	Milestones.class
 })
 public class MilestonesTest extends Helper {
+	@Test public void getActiveMilestone() throws Exception {
+		Milestones milestones = new Milestones(client);
+    	JSONObject json = milestones.getActiveMilestone("1234");
+        
+        assertTrue(json instanceof JSONObject);
+	}
+	
+	@Test public void getSubmissions() throws Exception {
+		Milestones milestones = new Milestones(client);
+    	JSONObject json = milestones.getSubmissions("1234");
+        
+        assertTrue(json instanceof JSONObject);
+	}
+	
 	@Test public void create() throws Exception {
 		Milestones milestones = new Milestones(client);
     	JSONObject json = milestones.create(new HashMap<String, String>());

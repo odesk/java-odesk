@@ -44,6 +44,28 @@ public final class Milestones {
 	}
 	
 	/**
+     * Get active Milestone for the Contract
+     *
+     * @param	contractId Contract reference
+     * @throws	JSONException If error occurred
+	 * @return	{@link JSONObject}
+     */
+    public JSONObject getActiveMilestone(String contractId) throws JSONException {
+        return oClient.get("/hr/v3/fp/milestones/statuses/active/contracts/" + contractId);
+    }
+    
+    /**
+     * Get all submissions for the active Milestone
+     *
+     * @param	milestoneId Milestone ID
+     * @throws	JSONException If error occurred
+	 * @return	{@link JSONObject}
+     */
+    public JSONObject getSubmissions(String milestoneId) throws JSONException {
+        return oClient.get("/hr/v3/fp/milestones/" + milestoneId + "/submissions");
+    }
+	
+	/**
      * Create a new Milestone
      *
      * @param   params Parameters
