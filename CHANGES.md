@@ -11,6 +11,7 @@
 * Added new Submission API - Submit for Approval
 * Added new Submission API - Approve the Submission
 * Added new Submission API - Reject the Submission
+* Fixed issue in Workdiary API
 
 ## 0.1.10
 * Added new call for Referenced User API

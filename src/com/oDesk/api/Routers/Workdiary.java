@@ -54,7 +54,7 @@ public final class Workdiary {
 	 * @return	{@link JSONObject}
      */
     public JSONObject get(String company, String username, String date, HashMap<String, String> params) throws JSONException {
-        return oClient.get("/team/v1/workdiaries/" + company + "/" + "username" + "/" + date, params);
+        return oClient.get("/team/v1/workdiaries/" + company + "/" + username + "/" + date, params);
     }
 
 }
