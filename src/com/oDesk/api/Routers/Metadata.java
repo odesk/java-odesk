@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the Terms.
  * You may obtain a copy of the Terms at
  * 
- *    https://developers.odesk.com/api-tos.html
+ *    http://developers.odesk.com/API-Terms-of-Use
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -51,7 +51,17 @@ public final class Metadata {
      */
     public JSONObject getCategories() throws JSONException {   
         return oClient.get("/profiles/v1/metadata/categories");
-    }   
+    }
+    
+    /** 
+     * Get Categories (v2)
+     *
+     * @throws	JSONException If error occurred
+	 * @return	{@link JSONObject}
+     */
+    public JSONObject getCategoriesV2() throws JSONException {   
+        return oClient.get("/profiles/v2/metadata/categories");
+    }
 
     /** 
      * Get Skills
