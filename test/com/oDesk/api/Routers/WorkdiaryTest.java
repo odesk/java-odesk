@@ -24,4 +24,11 @@ public class WorkdiaryTest extends Helper {
         
         assertTrue(json instanceof JSONObject);
 	}
+	
+	@Test public void getByContract() throws Exception {
+		Workdiary workdiary = new Workdiary(client);
+    	JSONObject json = workdiary.getByContract("1234", "date", new HashMap<String, String>());
+        
+        assertTrue(json instanceof JSONObject);
+	}
 }

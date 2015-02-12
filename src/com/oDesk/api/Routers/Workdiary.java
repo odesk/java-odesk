@@ -56,5 +56,18 @@ public final class Workdiary {
     public JSONObject get(String company, String username, String date, HashMap<String, String> params) throws JSONException {
         return oClient.get("/team/v1/workdiaries/" + company + "/" + username + "/" + date, params);
     }
+    
+    /**
+     * Get Work Diary by Contract
+     *
+     * @param   contract Contract ID
+     * @param   date Date
+     * @param   params (Optional) Parameters
+     * @throws	JSONException If error occurred
+	 * @return	{@link JSONObject}
+     */
+    public JSONObject getByContract(String contract, String date, HashMap<String, String> params) throws JSONException {
+        return oClient.get("/team/v2/workdiaries/contracts/" + contract + "/" + date, params);
+    }
 
 }
