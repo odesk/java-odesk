@@ -1,5 +1,9 @@
 # Release History
 
+## 0.1.12
+* Added new Metadata API - List categories (v2)
+* Added new Team API - Get Work Diary by Contract)
+
 ## 0.1.11
 * Added new Milestone API - Get Active Milestone for specific Contract
 * Added new Milestone API - Get all Submissions for specific Milestone
