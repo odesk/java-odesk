@@ -31,4 +31,11 @@ public class OffersTest extends Helper {
         
         assertTrue(json instanceof JSONObject);
 	}
+	
+	@Test public void actions() throws Exception {
+		Offers offers = new Offers(client);
+    	JSONObject json = offers.actions("1234", new HashMap<String, String>());
+        
+        assertTrue(json instanceof JSONObject);
+	}
 }

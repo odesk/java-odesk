@@ -1,5 +1,8 @@
 # Release History
 
+## 0.1.13
+* Added new Offer API - Accept or decline an offer
+
 ## 0.1.12
 * Added new Metadata API - List categories (v2)
 * Added new Team API - Get Work Diary by Contract)

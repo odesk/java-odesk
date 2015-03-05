@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the Terms.
  * You may obtain a copy of the Terms at
  * 
- *    https://developers.odesk.com/api-tos.html
+ *    http://developers.odesk.com/API-Terms-of-Use
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -63,6 +63,18 @@ public final class Offers {
      */
     public JSONObject getSpecific(String reference) throws JSONException {
         return oClient.get("/offers/v1/contractors/offers/" + reference);
+    }
+    
+    /**
+     * Run a specific action
+     *
+     * @param   reference Offer reference
+     * @param   params Parameters
+     * @throws	JSONException If error occurred
+	 * @return	{@link JSONObject}
+     */
+    public JSONObject actions(String reference, HashMap<String, String> params) throws JSONException {
+        return oClient.post("/offers/v1/contractors/offers/" + reference, params);
     }
 
 }
