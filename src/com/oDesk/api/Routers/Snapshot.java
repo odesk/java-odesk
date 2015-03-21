@@ -82,5 +82,42 @@ public final class Snapshot {
     public JSONObject delete(String company, String username, String ts) throws JSONException {
         return oClient.delete("/team/v1/snapshots/" + company + "/" + username + "/" + ts);
     }
+    
+    /**
+     * Get snapshot info by specific contract
+     *
+     * @param   contractId Contract ID
+     * @param   ts Timestamp
+     * @throws	JSONException If error occurred
+	 * @return	{@link JSONObject}
+     */
+    public JSONObject getByContract(String contractId, String ts) throws JSONException {   
+        return oClient.get("/team/v2/snapshots/contracts/" + contractId + "/" + ts);
+    }   
+
+    /** 
+     * Update snapshot by specific contract
+     *
+     * @param   contractId Contract ID
+     * @param   ts Timestamp
+     * @param   params Parameters
+     * @throws	JSONException If error occurred
+	 * @return	{@link JSONObject}
+     */
+    public JSONObject updateByContract(String contractId, String ts, HashMap<String, String> params) throws JSONException {   
+        return oClient.put("/team/v2/snapshots/contracts/" + contractId + "/" + ts, params);
+    }
+    
+    /**
+     * Delete snapshot by specific contract
+     *
+     * @param   contractId Contract ID
+     * @param   ts Timestamp
+     * @throws	JSONException If error occurred
+	 * @return	{@link JSONObject}
+     */
+    public JSONObject deleteByContract(String contractId, String ts) throws JSONException {
+        return oClient.delete("/team/v2/snapshots/contracts/" + contractId + "/" + ts);
+    }
 
 }

@@ -38,4 +38,25 @@ public class SnapshotTest extends Helper {
         
         assertTrue(json instanceof JSONObject);
 	}
+	
+	@Test public void getByContract() throws Exception {
+		Snapshot snapshot = new Snapshot(client);
+    	JSONObject json = snapshot.getByContract("1234", "date");
+        
+        assertTrue(json instanceof JSONObject);
+	}
+	
+	@Test public void updateByContract() throws Exception {
+		Snapshot snapshot = new Snapshot(client);
+    	JSONObject json = snapshot.updateByContract("1234", "date", new HashMap<String, String>());
+        
+        assertTrue(json instanceof JSONObject);
+	}
+	
+	@Test public void deleteByContract() throws Exception {
+		Snapshot snapshot = new Snapshot(client);
+    	JSONObject json = snapshot.deleteByContract("1234", "date");
+        
+        assertTrue(json instanceof JSONObject);
+	}
 }
