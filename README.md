@@ -1,3 +1,5 @@
+# **DEPRECATED (use https://github.com/upwork/java-upwork instead)**
+
 JAVA bindings for oDesk API
 ============
 
