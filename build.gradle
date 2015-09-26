@@ -1,0 +1,47 @@
+apply plugin: 'java'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+version = '1.0.0'
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'JavaOdesk', 'Implementation-Version': version
+    }
+}
+
+dependencies {
+    testCompile 'org.mockito:mockito-all:1.9.5'
+    testCompile 'junit:junit:4.11'
+    testCompile 'org.powermock:powermock-module-junit4:1.5.5'
+    testCompile 'org.powermock:powermock-api-mockito:1.5.5'
+    
+    compile 'org.apache.httpcomponents:httpclient:4.3.5'
+    compile 'org.json:json:20090211'
+    compile 'oauth.signpost:signpost-core:1.2.1.2'
+    compile 'oauth.signpost:oauth-signpost:1.2.1.2'
+    compile 'oauth.signpost:signpost-commonshttp4:1.2.1.2'
+}
+
+test {
+    testLogging {
+        // Show that tests are run in the command-line output
+        events 'passed'
+    }
+}
+
+sourceSets {
+    main {
+        java.srcDirs = ["src"]
+    }
+    test { 
+        java.srcDirs = ["test"] 
+    }
+}
